@@ -1,0 +1,74 @@
+Xserver でPHPやcomposerなどの各種設定を終えた状態から
+
+【laravelをインストール】
+
+適切な箇所にフォルダを作成
+mkdir laravel_test02
+
+上記フォルダに移動したのちlaravelインストール
+composer create-project --prefer-dist laravel/laravel （バージョン指定しない場合は最新版）指定する場合は「laravel/laravel . "9.*"」と書く 
+
+【インストール完了後】
+
+・.envとconfig/app.phpの必要箇所を編集
+
+timezone Asia/Tokyo
+locale ja
+fallback_locale ja
+faker_locale ja_JP
+
+
+・データベースのDBNAME,USE.PASSなどを.envに記述
+
+・サーバ上でシンボリックリンク作成
+
+ドメイン等から、laravelのあるフォルダにシンボリックリンク作成
+
+※まずデフォルトトップページが正しく表示されるかチェック
+
+・コントローラーとViewなど基本設定を行う
+indexで違うファイルを表示させたりしてチェックする
+
+・サンプルの「tasks」で必要なファイル等を配置
+
+tailwindcssなどを適用したページを配置してみる（todoアプリのイメージ）
+
+・ドメイン/tasksでアクセスすると以下のエラーがでる
+
+「Vite manifest not found at」
+
+・laravelフォルダに移動して
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+tailwind.config.jsというファイルと、postcss.config.jsが生成されるので
+
+tailwind.config.js内を適宜修正
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+}
+
+・resources\css\app.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+上記を記述
+
+・laravelフォルダにて「npm run build」を実施
+
+public/build/manifest.jsonが生成される
+
+・完了
