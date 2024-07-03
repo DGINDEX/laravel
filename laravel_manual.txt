@@ -1,5 +1,7 @@
 ～laravelインストール手順マニュアル～
 
+[ssh]でログインできるようにする
+
 Xserver でPHPやcomposerなどの各種設定を終えた状態から
 
 【laravelをインストール】
