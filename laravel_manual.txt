@@ -7,7 +7,7 @@ Xserver でPHPやcomposerなどの各種設定を終えた状態から
 【laravelをインストール】
 
 適切な箇所にフォルダを作成
-mkdir laravel_test02
+例：mkdir laravel_test02
 
 上記フォルダに移動したのちlaravelインストール
 composer create-project --prefer-dist laravel/laravel （バージョン指定しない場合は最新版）指定する場合は「laravel/laravel . "9.*"」と書く 
