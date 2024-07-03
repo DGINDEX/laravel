@@ -1,0 +1,27 @@
+～breezeインストール手順マニュアル～
+
+ログイン機能のついたbreezeをインストール
+
+1：該当ディレクトリに移動
+
+2：composer require laravel/breeze --dev
+
+3：php artisan migrate
+
+本来ならデータベースがない場合はテーブル作成等がここで実施される
+※もし存在するならエラーになるが本来はならない
+
+4：npm install
+
+warnningが出るかもしれないがいける
+
+・完了
+
+
+～日本語化～
+
+1：composer require askdkc/breezekp --dev
+
+2：php artisan breezejp
+
+・完了
